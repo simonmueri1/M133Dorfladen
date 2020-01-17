@@ -55,7 +55,6 @@ app.post("/api/warenkorb/:id", (req, res) => {
     }
     let shoppingcart = req.session!.shoppingcart as ShoppingCart;
     shoppingcart.allProducts = [...shoppingcart.allProducts, product!];
-    console.log(shoppingcart);
     res.sendStatus(200);
 });
 
