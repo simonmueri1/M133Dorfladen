@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link href="https://fonts.googleapis.com/css?family=Signika&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Seymour+One&display=swap" rel="stylesheet">
+
+        <link href="/assets/style.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="../assets/scripts/checkout.js"></script>
+
+        <title>Checkout</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+            <a class="navbar-brand" href="/">Dorfladen</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto"></ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <a href="/shoppingcart">Zurück</a>
+                </form>
+            </div>
+        </nav>
+        <br>
+        <br>
+        <div id="verify">
+            <div class="row">
+                <div class="col-6 col-md-4">
+                </div>
+                <div class="col-6 col-md-4">
+                    <h1>Checkout</h1>
+                    <br>
+                    <form>
+                        Name
+                        <br/>
+                        <input type="text" id="user_input" name="username" />
+                        <br/>
+                        Nachname
+                        <br/>
+                        <input type="text" id="pass_input" name="password" />
+                        <br/>
+                        Strasse
+                        <br/>
+                        <input type="text" id="v_pass_input" name="v_password" />
+                        <br/>
+                        Hausnummer
+                        <br/>
+                        <input type="text" id="hausnummer" name="hausnummer" />
+                        <br/>
+                        PLZ
+                        <br/>
+                        <input type="text" id="hausnummer" name="hausnummer" pattern="\d{4}" placeholder="6000" />
+                        <br/>
+                        Email
+                        <br/>
+                        <input type="email" id="hausnummer" name="hausnummer" />
+                        <br/>
+                        <br/>
+                        <input type="submit" id="register" value="bezahlen" disabled="disabled" />
+                    </form>
+                    <div id="test">
+                    </div>
+                </div>
+                <div class="col-6 col-md-4"></div>
+            </div>
+        </div>
+    </body>
+    <script>
+        (function() {
+            $('form > input').keyup(function() {
+
+                var empty = false;
+                $('form > input').each(function() {
+                    if ($(this).val() == '') {
+                        empty = true;
+                    }
+                });
+
+                if (empty) {
+                    $('#register').attr('disabled', 'disabled');
+                } else {
+                    $('#register').removeAttr('disabled');
+                }
+            });
+        })()
+    </script>
+</html>
+    

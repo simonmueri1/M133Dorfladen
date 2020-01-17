@@ -33,6 +33,10 @@ app.get("/shoppingcart", (req, res) => {
     res.sendFile(path.join(__dirname + '/../frontend/html/shoppingcart.html'));
 });
 
+app.get("/checkout", (req, res) => {
+    res.sendFile(path.join(__dirname + '/../frontend/html/checkout.html'));
+})
+
 
 //api
 app.get("/api/products", (req, res) => {
