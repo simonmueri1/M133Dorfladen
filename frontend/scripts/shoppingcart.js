@@ -1,5 +1,6 @@
-  
 const cart = document.getElementById('cart');
+const price = document.getElementById('price');
+var sum = 0;
 
 getItem();
 
@@ -7,26 +8,31 @@ function getItem() {
     fetch("/api/warenkorb/get")
         .then(r => r.json())
         .then(r => {
-            console.log(r.allProducts[0])
-            console.log(r.allProducts.length)
-
             let productId = []
             for (let i = 0; i < r.allProducts.length; i++) {
-                console.log(r.allProducts[i])
-                if (!productId.includes(r.allProducts[i].id)) {
-                    productId.push(r.allProducts[i].id)
+                productId.push(r.allProducts[i].id)
+                sum = sum + r.allProducts[i].specialOffer
+                if (!productId.includes(i)) {
+                    cart.innerHTML += `             
+                <tr>
+                <td> 1x </td>                
+                <td>${r.allProducts[Number(i)].productName}</td>
+                <td><p style="color: red; text-decoration: line-through">${r.allProducts[Number(i)].normalPrice} CHF</p></td>
+                <td><p style="color: green">${r.allProducts[Number(i)].specialOffer} CHF </p></td>
+              </tr>
+              <br>`
                 }
+                console.log(productId)
+
             }
-            productId.forEach(id => {
-                console.log(id)
-                console.log(r.allProducts[Number(id)].productName)
-                cart.innerHTML += `
-                <img src="../assets/img/${r.allProducts[Number(id)].imageName}">
-                ${r.allProducts[Number(id)].productName}
-                <br>
-                ${r.allProducts[Number(id)].specialOffer} CHF`
-            });
-            console.log(productId)
+            displayCheckout();
 
         });
+}
+
+function displayCheckout() {
+
+    document.getElementById("checkout").innerHTML = `Ihre Summe: ${sum.toFixed(2)} CHF`;
+    document.getElementById("pay").innerHTML = `Bezahlen`;
+
 }
