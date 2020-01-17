@@ -5,6 +5,6 @@
         "resolveJsonModule": true
     },
     "include": [
-        "/backend/server.ts"
+        "./backend/server.ts"
     ]
 }
