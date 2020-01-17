@@ -12,12 +12,12 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <script src="../assets/scripts/checkout.js"></script>
+        <script src="../scripts/checkout.js"></script>
 
         <title>Checkout</title>
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+        <nav class="navbar navbar-expand navbar navbar-dark bg-primary">
             <a class="navbar-brand" href="/">Dorfladen</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -41,27 +41,27 @@
                     <form>
                         Name
                         <br/>
-                        <input type="text" id="user_input" name="username" />
+                        <input type="text"/>
                         <br/>
                         Nachname
                         <br/>
-                        <input type="text" id="pass_input" name="password" />
+                        <input type="text"/>
                         <br/>
                         Strasse
                         <br/>
-                        <input type="text" id="v_pass_input" name="v_password" />
+                        <input type="text"/>
                         <br/>
                         Hausnummer
                         <br/>
-                        <input type="text" id="hausnummer" name="hausnummer" />
+                        <input type="text"/>
                         <br/>
                         PLZ
                         <br/>
-                        <input type="text" id="hausnummer" name="hausnummer" pattern="\d{4}" placeholder="6000" />
+                        <input type="text"pattern="\d{4}" placeholder="6000" />
                         <br/>
                         Email
                         <br/>
-                        <input type="email" id="hausnummer" name="hausnummer" />
+                        <input type="email"/>
                         <br/>
                         <br/>
                         <input type="submit" id="register" value="bezahlen" disabled="disabled" />
